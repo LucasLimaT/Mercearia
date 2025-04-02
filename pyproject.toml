@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "django>=5.1.7",
+    "pillow>=11.1.0",
     "taskipy>=1.14.1",
 ]
 
@@ -16,3 +17,6 @@ makemigrate = "uv run manage.py makemigrations"
 migrate = "uv run manage.py migrate"
 
 collectstatic = "uv run manage.py collectstatic"
+startapp = "uv run manage.py startapp"
+
+createsuperuser = "uv run manage.py createsuperuser"
