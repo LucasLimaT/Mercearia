@@ -7,3 +7,7 @@ class Categorias(models.Model):
     slug = models.SlugField(max_length=100, unique=True, null=True)
     categoria_descricao = models.TextField(max_length=255, blank=True)
     categoria_imagem = models.ImageField(upload_to="fotos/categorias/", blank=True)
+
+
+def __str__(self):
+    return self.categorias_nome

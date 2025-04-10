@@ -1,6 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from produtos.models import Produtos
 
 
 def home(request):
-    return render(request, 'home.html')
+    produtos = Produtos.objects.all().filter(esta_disponivel=True)
+
+    context = {"produtos": produtos}
+
+    return render(request, "home.html", context)
