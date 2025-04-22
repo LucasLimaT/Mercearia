@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from categorias.models import Categorias
 
 
@@ -14,3 +15,7 @@ class Produtos(models.Model):
     esta_disponivel = models.BooleanField(default=True)
     criado_em = models.DateTimeField(auto_now_add=True)
     modificado_em = models.DateTimeField(auto_now=True)
+
+
+def get_url(self):
+    return reverse("produto_detalhe", args=[self.categoria.slug, self.slug])
